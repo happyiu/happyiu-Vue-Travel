@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption" ref="mySwiper">
+    <swiper :options="swiperOption" ref="mySwiper" v-if="list.length">
     <!-- slides -->
-    <swiper-slide v-for="item in swiperList" :key="item.id">
-      <img class="swiper-img" :src="item.url">
+    <swiper-slide v-for="(item,index) in list" :key="index">
+      <img class="swiper-img" :src="item">
     </swiper-slide>
 
     <div class="swiper-pagination"  slot="pagination"></div>
@@ -14,6 +14,11 @@
 <script>
   export default{
     name: 'HomeWwiper',
+    props:{
+      list: Array
+    },
+    computed: {
+    },
     data(){
       return {
         swiperOption: {

@@ -9,6 +9,11 @@ import './assets/styles/iconFont/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
+
 Vue.config.productionTip = false
 fsatClick.attach(document.body)
 
